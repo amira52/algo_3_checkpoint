@@ -1,0 +1,26 @@
+PROCEDURE Dot_product(V1,V2: ARRAY_OF INTEGER, VAR Ps:INTEGER)
+VAR
+    i:INTEGER;
+BEGIN
+    IF (V1.lenght<> V2.length) THEN{
+        WRITE("error: Ps cannot be calculated")}    
+    ELSE{
+        FOR i FROM 0 TO V1.lenght-1 STEP 1  DO
+             Ps= Ps+V1[i]*V2[i]
+        END_FOR}
+    END_IF
+END
+ALGORITHM Dot_product
+VAR
+    V1, V2: ARRAY_OF INTEGER[10];
+    Ps: INTEGER;
+BEGIN
+Write("entre V1");
+Write("enter V2");
+Read(V1 et V2);
+    Ps=0;
+    Dot_product(V1, V2, Ps);
+    IF (Ps=0) THEN{
+        Write("Vectors are orthogonal")
+    END_IF}
+END
